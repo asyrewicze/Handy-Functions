@@ -3,8 +3,16 @@ Function Start-Pomodoro
     Param (
         [int]$Minutes = 25
     )
+
+    # First Checking to Make Sure the BurntToast Module is Install
+    $ToastInstallStatus = Get-Command -Name New-BurntToastNotification
+    if ($ToastInstallStatus -eq $null){
+        Write-Verbose -Verbose "Missing Dependency, please install the BurntToast PowerShell Module using the Command: Install-Module -Name BurntToast"
+        break
+    }
+
     # Make Sure You Set the File Path!
-    $FILEPATH = 'D:\Profile Storage\Documents'
+    $FILEPATH = 'C:\Users\asyre\Documents'
     $ActivityName = Read-Host 'What is the name of this activity?'
     $ActivityTime = Get-Date
     Write-Verbose -Verbose "Logging Activity to $FILEPATH\PomodoroLog.txt"
