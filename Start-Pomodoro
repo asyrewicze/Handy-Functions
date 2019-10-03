@@ -1,0 +1,71 @@
+Function Start-Pomodoro
+{
+    Param (
+        [int]$Minutes = 25
+    )
+    # Make Sure You Set the File Path!
+    $FILEPATH = 'D:\Profile Storage\Documents'
+    $ActivityName = Read-Host 'What is the name of this activity?'
+    $ActivityTime = Get-Date
+    Write-Verbose -Verbose "Logging Activity to $FILEPATH\PomodoroLog.txt"
+    Add-Content -Path $FILEPATH\PomodoroLog.txt -Value "$ActivityTime --- $ActivityName"
+
+    Write-Verbose -Verbose "Starting 25 Minute Pomodoro....."
+    Write-Verbose -Verbose "5"
+    Start-Sleep -Seconds 1
+    Write-Verbose -Verbose "4"
+    Start-Sleep -Seconds 1
+    Write-Verbose -Verbose "3"
+    Start-Sleep -Seconds 1
+    Write-Verbose -Verbose "2"
+    Start-Sleep -Seconds 1
+    Write-Verbose -Verbose "1"
+    Start-Sleep -Seconds 1
+    Clear-Host
+
+    $seconds = $Minutes*60
+    $delay = 1 #seconds between ticks
+ 
+    for($i = $seconds; $i -gt 0; $i = $i - $delay)
+    {
+        $percentComplete = 100-(($i/$seconds)*100)
+        Write-Progress -SecondsRemaining $i `
+                       -Activity "Pomodoro - $ActivityName" `
+                       -Status "Time remaining:" `
+                       -PercentComplete $percentComplete
+        Start-Sleep -Seconds $delay
+    }
+
+   New-BurntToastNotification -Text "Pomodoro Complete! Moving to 5 Minute Break..."
+
+   Clear-Host
+
+   Write-Verbose -Verbose "5"
+   Start-Sleep -Seconds 1
+   Write-Verbose -Verbose "4"
+   Start-Sleep -Seconds 1
+   Write-Verbose -Verbose "3"
+   Start-Sleep -Seconds 1
+   Write-Verbose -Verbose "2"
+   Start-Sleep -Seconds 1
+   Write-Verbose -Verbose "1"
+   Start-Sleep -Seconds 1
+   Clear-Host
+
+   $breakseconds = 300
+   $breakdelay = 1
+
+   for($breaki = $breakseconds; $breaki -gt 0; $breaki = $breaki - $breakdelay)
+    {
+        $breakpercentComplete = 100-(($breaki/$breakseconds)*100)
+        Write-Progress -SecondsRemaining $breaki `
+                       -Activity "Break Time!" `
+                       -Status "Time remaining:" `
+                       -PercentComplete $breakpercentComplete
+        Start-Sleep -Seconds $breakdelay
+    }   
+
+    New-BurntToastNotification -Text "Break Over. Time for your next Pomodoro!"
+
+    Clear-Host
+}
