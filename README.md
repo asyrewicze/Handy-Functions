@@ -4,7 +4,7 @@ This is simply a repository for storage of some useful PowerShell Functions crea
 <h1> List of Functions </h1>
 
 <h2> Start-Pomodoro </h2>
-[Start-Pomodoro](https://github.com/asyrewicze/Handy-Functions/blob/master/Start-Pomodoro) is a Pomodoro timer designed to run within PowerShell. By Default the timer follows the standard Pomodoro best practice of a 25 minute work window followed by a 5 minute break. 
+The Start-Pomodoro Function is a Pomodoro timer designed to run within PowerShell. By Default the timer follows the standard Pomodoro best practice of a 25 minute work window followed by a 5 minute break. 
 
 Also included is a check for the [Burnt-Toast PowerShell Module](https://www.powershellgallery.com/packages/BurntToast/0.7.0) that can be called to present Toast Notifications in Windows once the Pomodoro Timer is Done
 
