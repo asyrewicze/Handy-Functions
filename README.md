@@ -8,4 +8,4 @@ Start-Pomodoro is a Pomodoro timer designed to run within PowerShell. By Default
 
 Also included is a check for the Burnt-Toast PowerShell module that can be called to present Toast Notifications in Windows once the Pomodoro Timer is Done
 
-<b>NOTE:</b>By default the function will ask what task you'll be working on and then write that string to the .txt file you define. Make sure to set this varible in the function!
+<b>NOTE:</b> By default the function will ask what task you'll be working on and then write that string to the .txt file you define. Make sure to set this varible in the function!

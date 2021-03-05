@@ -12,7 +12,7 @@ Function Start-Pomodoro
     }
 
     # Make Sure You Set the File Path!
-    $FILEPATH = 'C:\Users\asyre\Documents'
+    $FILEPATH = 'YOUR\PATH\HERE'
     $ActivityName = Read-Host 'What is the name of this activity?'
     $ActivityTime = Get-Date
     Write-Verbose -Verbose "Logging Activity to $FILEPATH\PomodoroLog.txt"
