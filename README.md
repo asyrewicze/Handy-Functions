@@ -1,6 +1,6 @@
 # Handy-Functions
 
-This is simply a repository for storage of some useful PowerShell Functions created by [Andy Syrewicze](https://www.andyontech.com)
+This is simply a repository for storage of some useful PowerShell Functions and Scripts created by [Andy Syrewicze](https://www.andyontech.com)
 
 ## List of Functions
 
